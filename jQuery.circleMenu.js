@@ -17,9 +17,9 @@
         };
 
     function vendorPrefixes(items,prop,value){
-        ['-webkit-','-moz-','-o-','-ms-',''].forEach(function(prefix){
+        ['-webkit-','-moz-','-o-','-ms-',''].forEach=function(prefix){
             items.css(prefix+prop,value);
-        });
+        };
     }
 
     function CircleMenu(element, options){
@@ -80,7 +80,7 @@
         });
 
         // Initialize event hooks from options
-        ['open','close','init','select'].forEach(function(evt){
+        ['open','close','init','select'].forEach=function(evt){
             var fn;
 
             if(self.options[evt]){
@@ -90,7 +90,7 @@
                 });
                 delete self.options[evt];
             }
-        });
+        };
 
         self.submenus = self.menu_items.children('ul');
         self.submenus.circleMenu($.extend({},self.options,{depth:self.options.depth+1}));
